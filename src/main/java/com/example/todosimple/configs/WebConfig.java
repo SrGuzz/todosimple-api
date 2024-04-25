@@ -8,9 +8,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-public class WebConfig implements WebMvcConfigurer { //Configuração paraliberar o front puxar os dados
-    
-    public void addCorsMappings(CorsRegistry registry){
+public class WebConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**");
     }
 }
