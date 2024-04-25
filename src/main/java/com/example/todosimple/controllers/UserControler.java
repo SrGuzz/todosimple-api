@@ -2,7 +2,6 @@ package com.example.todosimple.controllers;
 
 import java.net.URI;
 
-import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -18,6 +17,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.todosimple.models.User;
 import com.example.todosimple.models.User.CreateUser;
+import com.example.todosimple.models.User.UpdateUser;
 import com.example.todosimple.services.UserService;
 
 import jakarta.validation.Valid;
@@ -48,7 +48,7 @@ public class UserControler {
     }
 
     @PutMapping("/{id}") //avisa que a função atualiza alguma coisa
-    @Validated(Update.class)
+    @Validated(UpdateUser.class)
     public ResponseEntity<Void> update(@Valid @RequestBody User obj, @PathVariable Long id){
         obj.setId(id);
         this.userService.update(obj);
