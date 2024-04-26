@@ -22,9 +22,6 @@ import com.example.todosimple.services.UserService;
 
 import jakarta.validation.Valid;
 
-
-
-
 @RestController//avisa o spring q e um controlador 
 @RequestMapping("/user") //tudo na rota a partir daqui tem q ter /user 
 @Validated //o controler usa todas as notaçoes de validação
